@@ -1,0 +1,15 @@
+export default [
+  "DONGLE",
+  "FIRERFIGHTER",
+  "FLABERGASTED",
+  "RAINBOW",
+  "STOPPAGE",
+  "PRESIDENT",
+  "FOOTBALL",
+  "CABBAGE",
+  "NOTEPAD",
+  "LAPTOP",
+  "WHISKERS",
+  "SCRATCH",
+  "XYLOPHONE"
+];

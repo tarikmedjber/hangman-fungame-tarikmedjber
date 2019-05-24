@@ -8,7 +8,7 @@ Another great benefit of building several tiny apps is that you get to show futu
 
 ## Ideas
 
-If you're not feeling too confident, we recomment building the an **Emoji Search app** that renders a list of emojis and allows you to search and filter by name and keywords. Use the [provided JSON file](https://github.com/northcoders/FE-tiny-react-apps/blob/master/src/data/emojiList.json) as your source of data. This isn't too different to the quote generator, but you will need to think about how to control what you display without altering your original data.
+If you're not feeling too confident, we recommend building the an **Emoji Search app** that renders a list of emojis and allows you to search and filter by name and keywords. Use the [provided JSON file](https://github.com/northcoders/FE-tiny-react-apps/blob/master/src/data/emojiList.json) as your source of data. This isn't too different to the quote generator, but you will need to think about how to control what you display without altering your original data.
 
 **Hint:** The key to the filter functionality lies on the `onChange` event handler for the input element.
 
@@ -18,7 +18,7 @@ Constrain yourself to just 1 or 2 features. Only think about extending your app 
 
 1. Noughts and Crosses. Track scores - could you make this so you could programmatically make different size boards?
 
-2. Recipe idea generator: plug in some ingredients and get a random algorithmically created method. 
+2. Recipe idea generator: plug in some ingredients and get a random algorithmically created method.
 
 3. Hangman. Choose from different categories, keep track of scores... how will you represent it graphically? (You could look into svg, html5 canvas, or just find some images online)
 
@@ -35,7 +35,7 @@ REMEMBER: Commit changes after finishing a meaningful unit of work (a component,
 If you move on to a second app or beyond, use [create-react-app](https://github.com/facebook/create-react-app) to bootleg your project. We recommend you do this with `npx create-react-app <project-name>` - this means you don't need to globally install create-react-app and risk it becoming outdated. [More on npx](https://www.npmjs.com/package/npx).
 
 ## Credits
+
 The idea for React tiny apps comes from the following article by Andrew Farmer:
 
 - https://www.javascriptstuff.com/tiny-unique-app/
-
