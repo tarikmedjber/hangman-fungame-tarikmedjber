@@ -14,3 +14,9 @@ ul {
   border-style: outset;
   width: 20px;
 }
+
+#alphabet {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

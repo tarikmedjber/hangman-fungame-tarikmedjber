@@ -1,25 +1,19 @@
 import React from "react";
 
 class Gallows extends React.Component {
-  state = {
-    // letterLookUp: [
-    //   { letter: "D", guessed: false },
-    //   { letter: "O", guessed: false },
-    //   { letter: "N", guessed: false },
-    //   { letter: "G", guessed: false },
-    //   { letter: "L", guessed: false },
-    //   { letter: "E", guessed: false }
-    // ]
-  };
+  state = {};
   alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  word = this.props.word;
+
+  componentDidUpdate = word => {
+    if (!this.props.gameStatus) this.props.checkGameStatus(word);
+  };
   render() {
     const letters = this.props.word.split("");
-    console.log(letters);
-    console.log(this.props.guessedLetters);
 
-    // // const letterObjs = letters.map(letter => {
-    // //   return { letter: letter, guessed: false };
-    // // });
+    // const letterObjs = letters.map(letter => {
+    //   return { letter: letter, guessed: false };
+    // });
     // this.setState({ letterLookUp: letterObjs });
 
     return (
