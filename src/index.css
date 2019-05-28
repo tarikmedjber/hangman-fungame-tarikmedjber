@@ -1,8 +1,12 @@
 h1 {
+  font-family: fantasy;
+  font-size: 3em;
   text-align: center;
 }
 
 h3 {
+  font-family: fantasy;
+  font-size: 1em;
   text-align: center;
 }
 
@@ -12,11 +16,55 @@ ul {
 
 #alphabet li {
   border-style: outset;
-  width: 20px;
+  font-family: fantasy;
+  font-size: 1.5em;
+  width: 1.5em;
+  height: 1.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  text-align: center;
+}
+
+#alphabet li:hover {
+  cursor: pointer;
+}
+
+#alphabet li:active {
+  border-style: inset;
+}
+
+#keyboard {
+  display: flex;
+  /* border: 4px solid black; */
+  height: 15em;
+  width: 45em;
+  margin: 0 auto;
 }
 
 #alphabet {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
+}
+
+#hangingQuarters {
+  display: flex;
+  border: 4px solid black;
+  height: 30em;
+  width: 50em;
+  margin: 0 auto;
+}
+
+#correctLetters {
+  font-family: fantasy;
+  display: flex;
+  font-size: 2em;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 1em;
+  font-weight: bold;
 }
