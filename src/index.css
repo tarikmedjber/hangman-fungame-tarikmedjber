@@ -1,6 +1,6 @@
 h1 {
   font-family: fantasy;
-  font-size: 3em;
+  font-size: 5em;
   text-align: center;
 }
 
@@ -15,6 +15,8 @@ ul {
 }
 
 #alphabet li {
+  background-color: goldenrod;
+  border-color: goldenrod;
   border-style: outset;
   font-family: fantasy;
   font-size: 1.5em;
@@ -23,6 +25,7 @@ ul {
   margin-left: 0.5em;
   margin-right: 0.5em;
   text-align: center;
+  border-radius: 0.3em;
 }
 
 #alphabet li:hover {
@@ -50,7 +53,7 @@ ul {
 
 #hangingQuarters {
   display: flex;
-  border: 4px solid black;
+  /* border: 4px solid black; */
   height: 30em;
   width: 50em;
   margin: 0 auto;
@@ -59,7 +62,7 @@ ul {
 #correctLetters {
   font-family: fantasy;
   display: flex;
-  font-size: 2em;
+  font-size: 5em;
   flex-direction: row;
   align-items: stretch;
   justify-content: space-between;
@@ -67,4 +70,70 @@ ul {
   margin: 0 auto;
   padding-top: 1em;
   font-weight: bold;
+}
+
+.clicked {
+  pointer-events: none;
+  background-color: grey;
+}
+
+.newGame {
+  background-color: white;
+}
+
+#lives {
+  font-family: fantasy;
+  font-size: 1.5em;
+  width: 5.5em;
+  height: 1.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  text-align: center;
+  border-radius: 0.3em;
+  width: 20%;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+#newCatButton {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 26px;
+  width: 20%;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+#final {
+  text-align: left;
+
+  width: 100%;
+  margin-left: 40%;
+  margin-right: 40%;
+  padding: 1px 3px;
+}
+
+.app {
+  background-image: url("./hang-cat-pics//background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  opacity: 1;
+}
+
+.fill-window {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+#nineLIives {
+  font-size: 0%;
 }

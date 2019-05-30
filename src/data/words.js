@@ -1,7 +1,7 @@
 export default [
   "DONGLE",
   "FIRERFIGHTER",
-  "FLABERGASTED",
+  "FLABBERGASTED",
   "RAINBOW",
   "STOPPAGE",
   "PRESIDENT",
@@ -11,5 +11,20 @@ export default [
   "LAPTOP",
   "WHISKERS",
   "SCRATCH",
-  "XYLOPHONE"
+  "XYLOPHONE",
+  "BOOK",
+  "AREA",
+  "BUSINESS",
+  "CASE",
+  "CHILD",
+  "COMPANY",
+  "COUNTRY",
+  "DAY",
+  "EYE",
+  "FACT",
+  "FAMILY",
+  "GOVERNMENT",
+  "GROUP",
+  "HAND",
+  "HOME"
 ];
