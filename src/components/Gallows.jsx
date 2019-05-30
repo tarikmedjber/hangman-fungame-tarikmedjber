@@ -21,53 +21,62 @@ const catHangPicArray = [
   catHangPic7,
   catHangPic8
 ];
-class Gallows extends React.Component {
-  componentDidUpdate = word => {
-    if (!this.props.gameStatus) this.props.checkGameStatus(word);
-  };
-  render() {
-    return (
-      <div id="game">
-        <div id="gallows">
-          <div id="hangingQuarters">
-            <img
-              id={"nineLIives"}
-              src={catHangPicArray[this.props.lives]}
-              alt="hangcat"
-              height="480"
-              width="800"
-            />
-          </div>
-          {
-            <ul id="correctLetters">
-              {this.props.word.split("").map((letter, i) => {
-                return this.props.guessedLetters.includes(letter) ? (
-                  <li key={i}>{letter}</li>
-                ) : (
-                  <li key={i}>__</li>
-                );
-              })}
-            </ul>
-          }
+
+export default function Gallows(props) {
+  let image = catHangPicArray[props.lives];
+  if (props.gameStatus === "Loss") {
+    image = props.final;
+  } else if (props.gameStatus === "Win") {
+    image = props.final;
+  }
+  return (
+    <div id="game">
+      <div id="gallows">
+        <div id="hangingQuarters">
+          <img
+            id={"nineLIives"}
+            src={image}
+            alt="hangcat"
+            height="480"
+            width="800"
+          />
         </div>
-        <div id="keyboard">
-          <ul id="alphabet">
-            {this.props.alpha.split("").map((letter, i) => {
-              return (
-                <li
-                  key={i}
-                  onClick={event => {
-                    this.props.checkLetter(letter, this.props.word);
-                  }}
-                >
-                  {letter}
-                </li>
+
+        {
+          <ul id="correctLetters">
+            {props.word.split("").map((letter, i) => {
+              return props.guessedLetters.includes(letter) &&
+                props.showWord !== true ? (
+                <li key={i}>{letter}</li>
+              ) : !props.guessedLetters.includes(letter) &&
+                props.showWord !== true ? (
+                <li key={i}>__</li>
+              ) : (
+                <li key={i}> {letter}</li>
               );
             })}
           </ul>
-        </div>
+        }
       </div>
-    );
-  }
+      <button className="showWordButton" onClick={props.showWordFunc}>
+        Show Word
+      </button>
+      <div id="keyboard">
+        <ul id="alphabet">
+          {props.alpha.split("").map((letter, i) => {
+            return (
+              <li
+                key={i}
+                onClick={event => {
+                  props.checkLetter(letter, props.word);
+                }}
+              >
+                {letter}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+  );
 }
-export default Gallows;

@@ -1,6 +1,5 @@
 import React from "react";
 import Gallows from "./components/Gallows";
-// import Header from "./components/Header";
 import words from "./data/words";
 
 import "./index.css";
@@ -13,20 +12,27 @@ class App extends React.Component {
     guessedLetters: [],
     gameStatus: "",
     final: "",
-    header: "HangCat!"
+    header: "HangCat!",
+    showWord: "false"
   };
-
+  componentDidUpdate = word => {
+    if (!this.state.gameStatus) this.checkGameStatus(word);
+  };
   render() {
     return (
-      <div class="app">
+      <div className="app">
         <h1>{this.state.header}</h1>
-        <button id="newCatButton" onClick={this.createNewGame}>
+        <button className="newCatButton" onClick={this.createNewGame}>
           New Cat!
         </button>
+
         <p id="lives">{this.state.lives + "   lives left"}</p>
         <p id="final">{this.state.final}</p>
 
         <Gallows
+          showWordFunc={this.showWordFunc}
+          showWord={this.state.showWord}
+          final={this.state.final}
           createNewGame={this.createNewGame}
           alpha={this.state.toro}
           gameStatus={this.state.gameStatus}
@@ -41,6 +47,9 @@ class App extends React.Component {
     );
   }
 
+  showWordFunc = event => {
+    this.setState({ showWord: true });
+  };
   createNewGame = event => {
     this.setState(prevState => {
       return {
@@ -50,7 +59,8 @@ class App extends React.Component {
         gameStatus: "",
         toro: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
         final: "",
-        header: "HangCat!"
+        header: "HangCat!",
+        showWord: "false"
       };
     });
   };
@@ -78,14 +88,7 @@ class App extends React.Component {
       this.setState({
         gameStatus: "Loss",
         header: "YOU KILLED THE CAT GOD DAMN IT!",
-        final: (
-          <img
-            src="https://i.makeagif.com/media/7-22-2017/7IA5OU.gif"
-            alt="lost!"
-            height="250"
-            width="400"
-          />
-        )
+        final: "https://i.makeagif.com/media/7-22-2017/7IA5OU.gif"
       });
     } else if (
       this.state.words[this.state.currentIndex].split("").every(letter => {
@@ -96,14 +99,8 @@ class App extends React.Component {
         gameStatus: "Win",
         header: "THE CAT SURVIVED YOU WIN!",
 
-        final: (
-          <img
-            src="https://i.pinimg.com/originals/85/98/2e/85982e3e0db30ac93c3818f66299738b.gif"
-            alt="win!"
-            height="250"
-            width="400"
-          />
-        )
+        final:
+          "https://i.pinimg.com/originals/85/98/2e/85982e3e0db30ac93c3818f66299738b.gif"
       });
     }
   };
