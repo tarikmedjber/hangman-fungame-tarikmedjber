@@ -9,6 +9,6 @@ To run the app please follow these instructions:
 3. npm install
 4. npm start
 
-Please then based off screen size, use zoom so the alphabet and hangcat title is in frame.
+It is not responsive so please then based off screen size, use zoom so the alphabet and hangcat title is in frame.
 
 This is a fun react app I created, no cats were harmed in the making of this. 
