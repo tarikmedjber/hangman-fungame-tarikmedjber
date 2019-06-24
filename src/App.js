@@ -87,8 +87,9 @@ class App extends React.Component {
     if (this.state.lives < 1) {
       this.setState({
         gameStatus: "Loss",
-        header: "YOU KILLED THE CAT GOD DAMN IT!",
-        final: "https://i.makeagif.com/media/7-22-2017/7IA5OU.gif"
+        header: "YOU KILLED TOM!",
+        final:
+          "  https://thumbs.gfycat.com/VagueFlawlessAntlion-size_restricted.gif"
       });
     } else if (
       this.state.words[this.state.currentIndex].split("").every(letter => {
@@ -97,7 +98,7 @@ class App extends React.Component {
     ) {
       this.setState({
         gameStatus: "Win",
-        header: "THE CAT SURVIVED YOU WIN!",
+        header: "TOM SURVIVED YOU WIN!",
 
         final:
           "https://i.pinimg.com/originals/85/98/2e/85982e3e0db30ac93c3818f66299738b.gif"
